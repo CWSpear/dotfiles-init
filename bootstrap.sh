@@ -5,20 +5,22 @@ hash zsh 2>/dev/null || {
     exit 1
 }
 
-if [ ! -d ~/.homesick/repos/homeshick ]; then
+REPOS="$HOME/.homesick/repos"
+
+if [ ! -d "$REPOS/homeshick" ]; then
     echo "Installing Homeshick."
-    git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
+    git clone https://github.com/andsens/homeshick.git "$REPOS/homeshick"
 fi
 
-source ~/.homesick/repos/homeshick/homeshick.sh
+source "$REPOS/homeshick/homeshick.sh"
 homeshick link homeshick
 
-if [ ! -d ~/.homesick/repos/prezto ]; then
+if [ ! -d "$REPOS/prezto" ]; then
     echo "Installing Prezto."
     homeshick clone sorin-ionescu/prezto
 fi
 
-if [ ! -d ~/.homesick/repos/dotfiles ]; then
+if [ ! -d "$REPOS/dotfiles" ]; then
     echo "Installing dotfiles."
     homeshick clone CWSpear/dotfiles
     homeshick link dotfiles
