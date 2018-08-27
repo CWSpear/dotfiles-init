@@ -9,7 +9,7 @@ curl -L https://raw.githubusercontent.com/CWSpear/dotfiles-init/master/bootstrap
 
 This will install Homeshick and Prezto, then create a `dotfiles` castle and install my [dotfiles](https://github.com/CWSpear/dotfiles).
 
-**Note** That this requires `git` and `zsh` to be installed.
+**Note** that this requires `git` and `zsh` to be installed.
 
 For Debian based OSes (e.g. Ubuntu):
 
