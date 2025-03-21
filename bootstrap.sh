@@ -5,6 +5,11 @@ hash zsh 2>/dev/null || {
     exit 1
 }
 
+if [ ! command -v starship &> /dev/null ]; then
+  echo "Installing starship."
+  curl -sS https://starship.rs/install.sh | sh
+fi
+
 REPOS="$HOME/.homesick/repos"
 
 if [ ! -d "$REPOS/homeshick" ]; then
