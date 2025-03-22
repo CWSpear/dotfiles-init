@@ -18,7 +18,6 @@ if [ ! -d "$REPOS/homeshick" ]; then
 fi
 
 source "$REPOS/homeshick/homeshick.sh"
-homeshick link homeshick
 
 if [ ! -d "$REPOS/prezto" ]; then
     echo "Installing Prezto."
@@ -28,8 +27,9 @@ fi
 if [ ! -d "$REPOS/dotfiles" ]; then
     echo "Installing dotfiles."
     homeshick clone CWSpear/dotfiles
-    homeshick link dotfiles
 fi
+
+homeshick link
 
 ZSH=`which zsh`
 
