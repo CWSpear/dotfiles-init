@@ -5,7 +5,7 @@ hash zsh 2>/dev/null || {
     exit 1
 }
 
-if [ ! command -v starship &> /dev/null ]; then
+if ! command -v starship 2>&1 /dev/null; then
   echo "Installing starship."
   curl -sS https://starship.rs/install.sh | sh
 fi
@@ -29,6 +29,7 @@ if [ ! -d "$REPOS/dotfiles" ]; then
     homeshick clone CWSpear/dotfiles
 fi
 
+homeshick pull
 homeshick link
 
 ZSH=`which zsh`
